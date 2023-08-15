@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ATLANTIS THE ROYAL</title>
+    <style>
+
+                            /* navbar */
+
+        *{
+            margin: 0px;
+            padding: 0px;
+            
+        }
+        
+        .container{
+            position: relative;
+        }
+        #active{
+            background-color: antiquewhite;
+            color: rgb(29, 29, 47)
+        }
+        .image{
+            width: 100%;
+            height: 100vh;
+        }
+        
+       
+        .navbar{
+            height: 10vh;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(29, 29, 47);
+            
+           
+        }
+        .navbar p{
+            line-height: 10vh;
+            margin-left: 20px;
+            margin-right: 5vw;
+            color: antiquewhite;
+
+        }
+        .contact{
+            position: absolute;
+            margin-left: 10px;
+            
+        }
+
+        .navbar ul{
+            display: flex;
+            
+        }
+        .navbar ul li{
+            list-style: none;
+            
+        }
+        .navbar ul li a{
+            text-decoration: none;
+            line-height: 10vh;
+            padding: 10px;
+            margin-right: 20px;
+            
+            
+        }
+        #checkbox{
+            display: none;
+        }
+        #checkbtn{
+            display: none;
+            line-height: 10vh;
+            margin-left: 5vw; 
+            color: antiquewhite; 
+            font-size: 25px;
+        }
+        #checkbox:checked ~ ul{
+            left: 0px;
+            
+        }
+        @media screen and (max-width:900px) {
+            .navbar ul li{
+                display: none;
+            }
+            
+            #checkbtn{
+                display: block;
+            }
+            
+            .navbar ul {
+                
+                height: 100vh;
+                width: 40%;
+                position: fixed;
+                background-color: rgb(29, 29, 47);
+                /* left: 100px; */
+                left: -100%;
+                transition: .5s;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            .navbar ul li{
+                margin-top: 10vh;
+                display: block;
+                text-align: center;
+            
+        
+        
+            }
+            
+        }
+        .icons{
+            line-height: 10vh;
+            padding: 10px;
+            
+        }
+        .book{
+            line-height: 10vh;
+            color: antiquewhite;
+        }
+        .logo{
+            line-height: 10vh;            
+            font-family: 'Times New Roman', Times, serif;
+            
+            
+        }
+        hr{
+            height: 1px;
+            width: 100%;
+            background-color: antiquewhite;
+            
+        }
+        .links{
+            color: antiquewhite;
+        }
+        .content{
+            position: fixed;
+            top: 10vh;
+            height: 10vh;
+            width: 100%;
+            
+        }
+        .content:hover{
+            background-color: rgb(29, 29, 47);
+        }
+        .navbar:hover{
+            background-color: rgb(29, 29, 47);
+        }
+        .elink{
+            color: antiquewhite;
+            text-decoration: none;
+            padding: 10px;
+            line-height: 10vh;
+        }
+        .content ul{
+            display: flex;
+            justify-content: space-between;
+            
+            
+        }
+        .content ul li{
+            list-style: none;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #checkbox2{
+            display: none;
+           
+        }
+        #checkbtn2{
+            display: none;
+            line-height: 10vh;
+            text-align: center; 
+            color: antiquewhite; 
+            
+        }
+        #checkbox2:checked ~ ul{
+            top: 10vh;
+        }
+         @media screen and (max-width:900px) {
+            
+            .content ul li{
+                display: none;
+            }
+            #checkbtn2{
+                display: block;
+            }
+            .content ul {
+                height: 90vh;
+                width: 100%;
+                position: fixed;
+                background-color: rgb(29, 29, 47);
+                top: 10vh;
+                top: -100%;
+                transition: .5s;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            .content ul li{
+                display: block;
+                text-align: center;
+                font-size: medium;
+        
+        
+            }
+            .elink{
+                font-size: small;
+                
+            }
+        }
+
+                      /* content */
+
+        .heading1{
+            padding: 5vh;
+            text-align: center;
+            margin-top: 15vh;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: lighter;
+            font-size: 1.5rem;
+            color: rgb(29, 29, 47);
+        }
+        .h1{
+            width: 30%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 1px;
+            background-color: rgb(29, 29, 47);
+        }
+        .para{
+            width: 50%;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .para1{
+            text-align: center;
+            margin-top: 10vh;
+            font-size: 1rem;
+            
+        }
+        .book1{
+            font-size: large;
+            text-align: center;
+            background-color: rgb(29, 29, 47);
+            margin-top: 5vh;
+        }
+        .booklink{
+            
+            padding: 4px;
+            text-decoration: none;
+            color: antiquewhite;
+            font-size: 1rem;
+        }
+       .i{
+        width: 30vw;
+        height: 30vw;
+        padding: 10px;
+        border-radius: 20px;
+       }
+       .imgs{
+        margin-top: 5vh;
+        display: flex;
+       justify-content: center;
+       
+       }
+       .h2{
+        width: 90vw;
+        height: 2px;
+        background-color: rgb(29, 29, 47);
+        margin-left: auto;
+        margin-right: auto;
+       }
+       .more{
+        height: 3vh;
+        line-height: 3vh;
+        margin-top: 2vh;
+       text-align: center;
+       width: 50%;
+       margin-left: auto;
+       margin-right: auto;
+       background-color: rgb(29, 29, 47);
+        
+       
+       }
+       .moreinfo{
+        font-size: 1rem;
+        text-decoration: none;
+        color: antiquewhite;
+
+       }
+       .rooms{
+        background-color: rgb(246, 238, 238);
+       }
+       
+       .experiencepara{
+        display: flex;
+        justify-content: center;
+       }
+       .culinary{
+        margin-top: 5vh;
+        padding: 10px;
+       }
+       .culinaryimg{
+        height: 40vh;
+        width: 30vw;
+        border-radius: 12px;
+       }
+       .intro{
+        height: 25vh;
+        width: 30vw;
+       
+        
+       }
+       .h3{
+        color: rgb(29, 29, 47);
+        font-size: 1rem;
+        padding: 4px;
+        font-weight: bold;
+       }
+       .p4{
+        
+        font-size: 1rem;
+        padding: 4px;
+       }
+       .explore1{
+        width: 30%;
+        background-color:rgb(29, 29, 47);
+        color: antiquewhite;
+        text-align: center;
+       
+       }
+       @media screen and (max-width:900px) {
+        .experiencepara{
+            display: block;           
+            
+        }
+        .culinary{
+            text-align: center;
+            margin-top: 0px;
+        }
+        .culinaryimg{
+            height: 50vh;
+            width: 80%;
+            text-align: center;
+        }
+        .intro{
+            width: 100%;
+            height: 20vh;
+            text-align: center;
+            
+        }
+        .p4{
+            font-size: .8rem;
+        }
+        .explore1 p{
+            font-size: .8rem;
+        }
+        .para1{
+            margin-bottom: 5vh;
+        }
+       }
+       @media screen and (max-width:900px) {
+        .imgs{
+            display: block;
+            text-align: center;
+            
+        }
+        .i{
+            width: 80%;
+            height: 50vh;
+            margin: auto;
+            
+            
+        }
+       }
+       @media screen and (max-width:500px) {
+        .culinaryimg{
+            height: 40vh;
+            width: 90%;
+            text-align: center;
+        }
+        .i{
+            width: 90%;
+            height: 40vh;
+            margin: auto;
+            
+            
+        }
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/img1.jpg" class="image" alt="">        
+
+        <div class="navbar">                
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" id="checkbtn"><i class="fa-solid fa-bars"></i></label>
+            <p>ATLANTIS THE ROYAL</p>                                             
+            <ul>                
+                <label for="checkbox" id="checkbtn"><i class="fa-solid fa-xmark"></i></label>
+                <li><a href="index.html" class="links" id="active"><i class="fa-solid fa-house"></i>HOME</a></li>
+                <li><a href="about.html" class="links">ABOUT</a></li>
+                <li><a href="services.html" class="links">SERVICES</a></li>
+                <li><a href="#" class="book">BOOK NOW</a></li>                
+            </ul>
+            
+        </div>
+        
+        <div class="content">
+            <hr>
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2" id="checkbtn2">LEARN MORE<i class="fa-solid fa-caret-down"></i></i></i></label>
+            <ul>                
+                <label for="checkbox2" id="checkbtn2"><i class="fa-solid fa-xmark"></i></i></i></label>
+                <li><a href="rooms.html" class="elink"> STAYS <i class="fa-solid fa-hotel"></i>  </a></li>
+                <li><a href="entertainment.html" class="elink">ENTERTAINMENT <i class="fa-solid fa-champagne-glasses"></i></a></li>
+                <li><a href="dining.html" class="elink">DINING <i class="fa-solid fa-burger"></i></i></a></li>
+                <li><a href="adventure.html" class="elink">ADVENTURE <i class="fa-solid fa-mountain"></i> </a></li>
+                <li><a href="#" class="elink">EVENTS <i class="fa-solid fa-calendar-days"></i> </a></li>
+                <li><a href="#" class="elink">OFFERS <i class="fa-solid fa-tag"></i></a></li> 
+                
+                              
+            </ul>
+        </div>
+
+   
+    </div>
+    <div class="discover">
+        <p class="heading1">THIS IS YOUR ROYAL SUMMER
+        </p>
+
+        <hr class="h1">
+        <div class="para">
+                    <p class="para1">
+                        
+                        Dubai’s newest icon is the place to be. From dining like royalty in 8 celebrity chef restaurants, to swimming 
+                        in the sky in private infinity pools, this will be the summer that tops all summers.
+                        Discover exclusive Suites and Signature Penthouses, pool and beach clubs that you don’t want
+                         to miss and an electrifying nightlife scene.<br><br>
+                         Your Royal Summer is finally here.<br><br>
+
+                         Stay between 4th June and 30th September to experience award-winning restaurants by celebrity chefs, 
+                         holistic wellness unlike anywhere else and unbelievable attractions that take your breath away.
+                         <div class="book1">
+                            <a href="#" class="booklink">BOOK YOUR ROYAL ROOM</a>
+                         </div>
+                    </p>
+                    
+        </div>
+        <div class="imgpara">
+            <p class="heading1">THIS IS THE PLACE TO BE THIS SUMMER </p>
+            <hr class="h1">
+            <div class="imgs">
+                <img src="images/img11.jpg" class="i" alt="">
+                <img src="images/img2.jpg" class="i" alt="">
+                <img src="images/img3.jpg" class="i" alt="">
+            </div>
+            <hr class="h2">
+            <div class="more">
+                <a href="about.html" class="moreinfo">view more</a>
+            </div>
+
+        </div>
+        <div class="rooms">
+            <p class="heading1">THIS IS THE EPITOME OF LUXURY </p>
+            <hr class="h1">
+
+            <div class="para">
+                <p class="para1">
+                    
+                    Find your royal sanctuary with Rooms, Suites and Signature Penthouses designed for picturesque views across the iconic Palm Island,
+                     the dazzling Dubai skyline or the Arabian Sea. Atlantis The Royal has the perfect stay for you, with 
+                    room connections available to create two-bedroom and three-bedroom Suites, larger Family Rooms and
+                     even options of privatising entire floors.<br><br>
+                     
+
+                     This is the summer you've been waiting for.
+                     <div class="book1">
+                        <a href="rooms.html" class="booklink">VIEW OUR ROOMS</a>
+                     </div>
+                </p>
+                
+            </div>
+            <div class="imgs">
+                <img src="images/img4.jpg" class="i" alt="">
+                <img src="images/img5.jpg" class="i" alt="">
+                <img src="images/img6.jpg" class="i" alt="">
+            </div> 
+            
+            <div class="more">
+                <a href="rooms.html" class="moreinfo">view more</a>
+            </div>
+        </div>
+
+        <div class="experience">
+            <p class="heading1">YOUR ROYAL EXPERIENCE </p>
+            <hr class="h1">
+
+            <div class="para">
+                <p class="para1">
+                    This is the place where the incredible is around every corner.<br>
+
+                    Unlock the Royal Experience.
+                </p>
+            </div>
+            <div class="experiencepara">
+                        <div class="culinary">
+
+                                <img src="images/img7.jpg" class="culinaryimg" alt="">
+                                <div class="intro">
+                                        <P class="h3">CULINARY EXPERIENCE</P>
+                                        <P class="p4">
+                                            Home to 17 world-class restaurants, including 8  celebrity chef restaurants, 1 Michelin stars restaurant,
+                                            Atlantis The Royal joins Atlantis, The Palm as the top culinary destination in Dubai.
+                                        </P>
+                                        <div class="more">
+                                            <a href="dining.html" class="moreinfo">view more</a>
+                                        </div>
+                                </div>
+                            
+                        </div>
+                        <div class="culinary">
+
+                                <img src="images/img8.jpg" class="culinaryimg" alt="">
+                                <div class="intro">
+                                        <P class="h3">LUXURY HOTELS</P>
+                                        <P class="p4" >
+                                            chieve inner harmony in a luxurious setting with exclusive treatment rooms, an outdoor pool and meditation pavilion, 
+                                            Hammam Sensorium, personal styling salons, an aesthetic wellness clinic and state-of-the-art Fitness Centre.
+                                        </P>
+                                        <div class="more">
+                                            <a href="entertainment.html" class="moreinfo">view more</a>
+                                        </div>
+                                </div>
+                            
+                        </div>
+                        <div class="culinary">
+
+                                <img src="images/img9.jpg" class="culinaryimg" alt="">
+                                <div class="intro">
+                                        <P  class="h3">MARINE EXPLORATION</P>
+                                        <P class="p4">No visit to Atlantis Aquaventure is completely legendary without meeting the resident dolphins. At Dolphin Bay, you can experience
+                                            a variety of incredible programmes that provide an up-close look at these magnificent marine .
+                                        </P>
+                                        <div class="more">
+                                            <a href="adventure.html" class="moreinfo">view more</a>
+                                        </div>
+                                </div>
+                            
+                        </div>
+            </div>
+
+
+        </div>
+               
+    </div>
+</body>
+</html>
